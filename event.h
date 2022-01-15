@@ -21,4 +21,6 @@ private:
     static map<string, int> activities; // allows for pruning of 0 each week
 };
 
+map<string, int> event::activities;
+
 #endif // EVENT_H
