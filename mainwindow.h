@@ -15,6 +15,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void editHomeText();
+    void editStatsText();
+
 private:
     Ui::MainWindow *ui;
 };
