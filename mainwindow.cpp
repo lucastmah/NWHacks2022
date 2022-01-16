@@ -46,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
         int start = item.value(3).toInt();
         int end = item.value(4).toInt();
         string name = item.value(5).toString().toStdString();
-        Category cat(item.value(5).toString().toStdString());
+        Category cat(item.value(6).toString().toStdString());
         if(findDay(year,month,day) == -1){
             daysHolder.push_back(new Day(year, month, day));
             daysHolder.at(findDay(year,month,day))->addEvent(new Event(cat,name,start,end));

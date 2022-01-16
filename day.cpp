@@ -10,7 +10,8 @@ Day::Day(int year, int month, int day)
 
 
 
-void Day::addEvent(Event event) {
+void Day::addEvent(Event* event) {
     events.push_back(event);
-    free_time -= event.length;
+    free_time -= event->length;
 }
+
