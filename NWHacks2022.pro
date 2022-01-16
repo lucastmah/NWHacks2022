@@ -16,10 +16,16 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
+    piechartseparated.cpp \
     piechartwidget.cpp 
 
 HEADERS += \
     catdialog.h \
+<<<<<<< Updated upstream
+=======
+    eventdialog.h \
+    piechartseparated.h \
+>>>>>>> Stashed changes
     piechartwidget.h \
     category.h \
     day.h \

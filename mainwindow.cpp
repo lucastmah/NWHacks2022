@@ -25,7 +25,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Connect to SQLite DB
     QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
+<<<<<<< Updated upstream
     sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+=======
+    sqldb.setDatabaseName("C:\\Users\\josh_\\Documents\\GitHub\\NWHacks2022\\time_management.db");
+    //qldb.setDatabaseName("time_management.db");
+>>>>>>> Stashed changes
     //TODO: Relative path should be used here
 
     //Display whether connected to the database
@@ -56,6 +61,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
 
+<<<<<<< Updated upstream
     QVector<QColor> colors(5);
     QVector<double> values(5);
     colors[0] = Qt::red, colors[1] = Qt::blue, colors[2] = Qt::green, colors[3] = Qt::yellow, colors[4] = Qt::magenta;
@@ -80,6 +86,17 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Grouped Implementation
     ui->piechartgrouped->setData(temp);
+=======
+
+    ui->piechartgrouped->setData(daysHolder.at(0));
+    ui->piechartseparated->setData(daysHolder.at(0));
+    for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++){
+        cout << daysHolder.at(0)->events.at(i)->toString() << endl << endl;
+    }
+
+
+
+>>>>>>> Stashed changes
 }
 
 MainWindow::~MainWindow()

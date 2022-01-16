@@ -100,6 +100,16 @@
          </rect>
         </property>
        </widget>
+       <widget class="PieChartSeparated" name="piechartseparated" native="true">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>200</y>
+          <width>191</width>
+          <height>151</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="stats">
        <attribute name="title">
@@ -171,6 +181,19 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PieChartWidget</class>
+   <extends>QWidget</extends>
+   <header>piechartwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PieChartSeparated</class>
+   <extends>QWidget</extends>
+   <header>piechartseparated.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
