@@ -5,10 +5,11 @@
 #include "event.h"
 #include <iostream>
 
-using namespace std;
-
 using std::string;
 using std::vector;
+using std::to_string;
+using std::cout;
+using std::endl;
 
 enum week { SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY };
 

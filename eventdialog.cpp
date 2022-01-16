@@ -43,6 +43,8 @@ void EventDialog::on_addButton_clicked()
 
     if (start.date() < end.date()) { // split event across two days
 
+    } else {
+
     }
 
     done(0);
