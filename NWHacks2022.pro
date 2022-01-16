@@ -14,13 +14,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
-<<<<<<< Updated upstream
-    piechartwidget.cpp
-=======
     home.cpp \
     piechartwidget.cpp \
     stats.cpp
->>>>>>> Stashed changes
 
 HEADERS += \
     category.h \
