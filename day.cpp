@@ -1,8 +1,17 @@
 #include "day.h"
 
-Day::Day(int weekday) : weekday(weekday)
+Day::Day(int year, int month, int day)
 {
-    this->free = 1440;
+    this->year = year;
+    this->month = month;
+    this->day = day;
+    this->free_time = 1440;
 }
 
-// TODO: addEvent()
+
+
+void Day::addEvent(Event* event) {
+    events.push_back(event);
+    free_time -= event->length;
+}
+

@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,26 +10,24 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    catdialog.cpp \
     category.cpp \
     day.cpp \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
-    home.cpp \
-    piechartwidget.cpp \
-    stats.cpp
+    piechartwidget.cpp 
 
 HEADERS += \
+    catdialog.h \
+    piechartwidget.h \
     category.h \
     day.h \
     mainwindow.h \
-    event.h \
-    home.h \
-    piechartwidget.h \
-    stats.h
-
+    event.h
 
 FORMS += \
+    catdialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

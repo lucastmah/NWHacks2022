@@ -10,15 +10,12 @@ using std::vector;
 class Category
 {
 public:
+    string name;
+
     static vector<Category> cats;
 
     Category();
-    Category(string cat_name);
-
-    string name();
-    string cat_name;
+    Category(string name);
 };
-
-vector<Category> Category::cats;
 
 #endif // CATEGORY_H
