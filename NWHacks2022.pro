@@ -25,6 +25,9 @@ HEADERS += \
 =======
     eventdialog.h \
     piechartseparated.h \
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     piechartwidget.h \
     category.h \

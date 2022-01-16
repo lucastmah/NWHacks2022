@@ -26,8 +26,11 @@ MainWindow::MainWindow(QWidget *parent)
     //Connect to SQLite DB
     QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
 =======
+=======
+>>>>>>> Stashed changes
     sqldb.setDatabaseName("C:\\Users\\josh_\\Documents\\GitHub\\NWHacks2022\\time_management.db");
     //qldb.setDatabaseName("time_management.db");
 >>>>>>> Stashed changes
@@ -60,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
             daysHolder.at(findDay(year,month,day))->addEvent(new Event(cat,name,start,end));
         }
     }
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
     QVector<QColor> colors(5);
@@ -88,6 +92,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->piechartgrouped->setData(temp);
 =======
 
+=======
+>>>>>>> Stashed changes
     ui->piechartgrouped->setData(daysHolder.at(0));
     ui->piechartseparated->setData(daysHolder.at(0));
     for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++){
