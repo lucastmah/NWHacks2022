@@ -4,6 +4,7 @@
 #include <vector>
 #include "event.h"
 #include <iostream>
+#include <string>
 
 using std::string;
 using std::vector;
