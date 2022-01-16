@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "catdialog.h"
 #include "home.h"
 #include "stats.h"
 
@@ -47,5 +47,13 @@ void MainWindow::editStatsText() {
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::on_addCatButton_clicked()
+{
+    CatDialog catDialog;
+    catDialog.setModal(true);
+    catDialog.exec();
 }
 
