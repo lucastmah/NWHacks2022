@@ -16,7 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
-    piechartwidget.cpp
+    piechartwidget.cpp 
 
 HEADERS += \
     catdialog.h \
@@ -25,7 +25,6 @@ HEADERS += \
     day.h \
     mainwindow.h \
     event.h
-
 
 FORMS += \
     catdialog.ui \

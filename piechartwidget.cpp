@@ -1,5 +1,6 @@
 #include "piechartwidget.h"
 #include <QPainter>
+#include "day.h"
 
 PieChartWidget::PieChartWidget(QWidget *parent)
     : QWidget{parent}
@@ -7,10 +8,34 @@ PieChartWidget::PieChartWidget(QWidget *parent)
 
 }
 
-void PieChartWidget::setData(QVector<double> value, QVector<QColor> colors)
+void PieChartWidget::setData(Day* target)
 {
-    qvValues = value;
-    qvColors = colors;
+    // Grouped Implementation
+    // Array Legend: [0] Sleep, [1] Work, [2] Eating, [3] School, [4] Recreation
+    QVector<double> tempTotals(target->events.size(), 0);
+
+    // Tallies minutes for each category, updates values values
+    for (unsigned long long i=0; i < target->events.size(); i++)
+    {
+        if(target->events[i].category.cat_name == "Sleep") {
+            tempTotals[0] += target->events[i].length;
+        }
+        else if(target->events[i].category.cat_name == "Work") {
+            tempTotals[1] +=target->events[i].length;
+        }
+        else if(target->events[i].category.cat_name == "Eating") {
+           tempTotals[2] += target->events[i].length;
+        }
+        else if(target->events[i].category.cat_name == "School") {
+            tempTotals[3] += target->events[i].length;
+        }
+        else {
+            tempTotals[4] += target->events[i].length;
+        }
+    }
+    totals = tempTotals;
+    QVector<QColor> tempColors = {Qt::red, Qt::blue, Qt::yellow, Qt::cyan, Qt::magenta};
+    qvColors = tempColors;
     repaint();
     update();
 }
@@ -37,16 +62,16 @@ void PieChartWidget::paintEvent(QPaintEvent *)
     }
 
     // Base Circle (Free time)
-    painter.setBrush(Qt::gray);
+    painter.setBrush(Qt::green);
     painter.drawPie(size, 0, 360*16);
 
     double sum = 1440;
     double startAng = 0.0;
     double angle, endAng, percent;
 
-    for (int i=0; i<qvValues.size(); i++)
+    for (int i=0; i<totals.size(); i++)
     {
-        percent = qvValues[i]/sum;
+        percent = totals[i]/sum;
         angle = percent*360;
         endAng = startAng + angle;
         painter.setBrush(qvColors[i]);

@@ -90,6 +90,16 @@
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
+       <widget class="PieChartWidget" name="piechartgrouped" native="true">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>140</y>
+          <width>161</width>
+          <height>141</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="stats">
        <attribute name="title">

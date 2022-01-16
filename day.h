@@ -17,7 +17,6 @@ enum week { SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY };
 class Day
 {
 public:
-
     int year, month, day, weekday;
     int free_time;
 

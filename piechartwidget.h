@@ -2,17 +2,18 @@
 #define PIECHARTWIDGET_H
 
 #include <QWidget>
+#include "day.h"
 
 class PieChartWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit PieChartWidget(QWidget *parent = nullptr);
-    void setData(QVector<double> value, QVector<QColor> colors);
+    void setData(Day* target);
 protected:
     void paintEvent(QPaintEvent*);
 private:
-    QVector<double> qvValues;
+    QVector<double> totals;
     QVector<QColor> qvColors;
 signals:
 

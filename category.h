@@ -16,7 +16,6 @@ public:
 
     Category();
     Category(string name);
-
 };
 
 #endif // CATEGORY_H
