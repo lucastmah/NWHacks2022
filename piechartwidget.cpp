@@ -17,20 +17,20 @@ void PieChartWidget::setData(Day* target)
     // Tallies minutes for each category, updates values values
     for (unsigned long long i=0; i < target->events.size(); i++)
     {
-        if(target->events[i].category.cat_name == "Sleep") {
-            tempTotals[0] += target->events[i].length;
+        if(target->events[i]->category.name == "Sleep") {
+            tempTotals[0] += target->events[i]->length;
         }
-        else if(target->events[i].category.cat_name == "Work") {
-            tempTotals[1] +=target->events[i].length;
+        else if(target->events[i]->category.name == "Work") {
+            tempTotals[1] +=target->events[i]->length;
         }
-        else if(target->events[i].category.cat_name == "Eating") {
-           tempTotals[2] += target->events[i].length;
+        else if(target->events[i]->category.name == "Eating") {
+           tempTotals[2] += target->events[i]->length;
         }
-        else if(target->events[i].category.cat_name == "School") {
-            tempTotals[3] += target->events[i].length;
+        else if(target->events[i]->category.name == "School") {
+            tempTotals[3] += target->events[i]->length;
         }
         else {
-            tempTotals[4] += target->events[i].length;
+            tempTotals[4] += target->events[i]->length;
         }
     }
     totals = tempTotals;
