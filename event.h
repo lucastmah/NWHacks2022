@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "category.h"
+#include <string>
 
 using std::to_string;
 
