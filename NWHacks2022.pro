@@ -16,8 +16,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
-    home.cpp \
-    stats.cpp \
     piechartwidget.cpp
 
 HEADERS += \
@@ -26,9 +24,7 @@ HEADERS += \
     category.h \
     day.h \
     mainwindow.h \
-    event.h \
-    home.h \
-    stats.h
+    event.h
 
 
 FORMS += \

@@ -29,19 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     values[0] = 70, values[1] = 480, values[2] = 50, values[3] = 0, values[4] = 120;
 
     //ui->widget->setData(values, colors);
-
-    QPushButton *homeRefresh = MainWindow::findChild<QPushButton *>("homeRefresh");
-    connect(homeRefresh, SIGNAL(released()), this, SLOT(editHomeText()));
-    QPushButton *statsRefresh = MainWindow::findChild<QPushButton *>("statsRefresh");
-    connect(statsRefresh, SIGNAL(released()), this, SLOT(editStatsText()));
-}
-
-void MainWindow::editHomeText() {
-    changeHomeText(ui->homeText);
-}
-
-void MainWindow::editStatsText() {
-    changeStatsText(ui->statsText);
 }
 
 MainWindow::~MainWindow()
