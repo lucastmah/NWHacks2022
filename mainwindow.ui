@@ -18,36 +18,86 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="home">
        <attribute name="title">
         <string>Home</string>
        </attribute>
-       <widget class="QLineEdit" name="homeText">
+       <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>192</x>
-          <y>103</y>
-          <width>391</width>
-          <height>291</height>
+          <x>340</x>
+          <y>10</y>
+          <width>91</width>
+          <height>41</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
         <property name="text">
-         <string>home</string>
+         <string>Today</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="homeRefresh">
+       <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>440</y>
-          <width>80</width>
-          <height>24</height>
+          <x>60</x>
+          <y>150</y>
+          <width>101</width>
+          <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>refresh</string>
+         <string>Yesterday</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>160</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tomorrow</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="PieChartWidget" name="piechartgrouped" native="true">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>140</y>
+          <width>161</width>
+          <height>141</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -55,30 +105,22 @@
        <attribute name="title">
         <string>Stats</string>
        </attribute>
-       <widget class="QLineEdit" name="statsText">
+       <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>160</y>
-          <width>261</width>
-          <height>161</height>
+          <x>290</x>
+          <y>0</y>
+          <width>191</width>
+          <height>41</height>
          </rect>
         </property>
-        <property name="text">
-         <string>stats</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="statsRefresh">
-        <property name="geometry">
-         <rect>
-          <x>340</x>
-          <y>420</y>
-          <width>80</width>
-          <height>24</height>
-         </rect>
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>refresh</string>
+         <string>7 Day Review</string>
         </property>
        </widget>
       </widget>
