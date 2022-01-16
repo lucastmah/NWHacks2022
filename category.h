@@ -16,8 +16,6 @@ public:
     Category(string cat_name);
 
     string name();
-
-private:
     string cat_name;
 };
 

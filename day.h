@@ -16,9 +16,8 @@ public:
     int free;
 
     Day(int weekday);
-
-private:
     vector<Event> events;
+
 };
 
 #endif // DAY_H

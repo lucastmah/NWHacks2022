@@ -14,15 +14,21 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
+<<<<<<< Updated upstream
     piechartwidget.cpp
+=======
+    home.cpp \
+    piechartwidget.cpp \
+    stats.cpp
+>>>>>>> Stashed changes
 
 HEADERS += \
-    piechartwidget.h \
     category.h \
     day.h \
     mainwindow.h \
     event.h \
     home.h \
+    piechartwidget.h \
     stats.h
 
 
