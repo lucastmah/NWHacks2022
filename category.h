@@ -21,6 +21,4 @@ private:
     string cat_name;
 };
 
-vector<Category> Category::cats;
-
 #endif // CATEGORY_H
