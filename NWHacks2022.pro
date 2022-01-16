@@ -13,6 +13,7 @@ SOURCES += \
     catdialog.cpp \
     category.cpp \
     day.cpp \
+    eventdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 
 HEADERS += \
     catdialog.h \
+    eventdialog.h \
     piechartwidget.h \
     category.h \
     day.h \
@@ -33,6 +35,7 @@ HEADERS += \
 
 FORMS += \
     catdialog.ui \
+    eventdialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -24,6 +24,8 @@ private slots:
 
     void on_addCatButton_clicked();
 
+    void on_addEventButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
