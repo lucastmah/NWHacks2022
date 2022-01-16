@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="home">
        <attribute name="title">
@@ -100,6 +100,32 @@
          </rect>
         </property>
        </widget>
+       <widget class="QPushButton" name="addEventButton">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>30</y>
+          <width>101</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add Event</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addCatButton">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>70</y>
+          <width>101</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add Category</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="stats">
        <attribute name="title">
@@ -124,37 +150,6 @@
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Page</string>
-       </attribute>
-       <widget class="QPushButton" name="addEventButton">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>140</y>
-          <width>101</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Add Event</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="addCatButton">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>200</y>
-          <width>101</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Add Category</string>
-        </property>
-       </widget>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -171,6 +166,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PieChartWidget</class>
+   <extends>QWidget</extends>
+   <header>piechartwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
