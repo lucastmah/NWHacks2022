@@ -31,9 +31,6 @@ public:
     }
 
 private slots:
-    void editHomeText();
-    void editStatsText();
-
     void on_addCatButton_clicked();
 
 private:
