@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Mac testing: Copy the absolute path to the database.
     sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+    //sqldb.setDatabaseName("../GitHub/NWHacks2022/time_management.db");
     //TODO: Relative path should be used here
 
     //Display whether connected to the database
