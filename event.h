@@ -2,12 +2,9 @@
 #define EVENT_H
 
 #include <iostream>
-#include <map>
 #include "category.h"
 
-
-
-using namespace std;
+using std::to_string;
 
 class Event
 {

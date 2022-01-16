@@ -26,8 +26,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Connect to SQLite DB
     QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
-    sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
-    //qldb.setDatabaseName("time_management.db");
+//    sqldb.setDatabaseName("/Users/ryan/Projects/NWHacks2022/time_management.db");
+    sqldb.setDatabaseName("../time_management.db");
     //TODO: Relative path should be used here
 
     //Display whether connected to the database
