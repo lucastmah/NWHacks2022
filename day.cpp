@@ -8,7 +8,11 @@ Day::Day(int year, int month, int day)
     this->free_time = 1440;
 }
 
-
+Day::~Day() {
+    for (Event* e : events) {
+        delete e;
+    }
+}
 
 void Day::addEvent(Event* event) {
     events.push_back(event);
