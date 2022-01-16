@@ -20,8 +20,6 @@ public:
 
     Event(Category category, string name, int start, int end);
 
-    ~Event();
-
 };
 
 #endif // EVENT_H
