@@ -17,18 +17,28 @@ CatDialog::~CatDialog()
 void CatDialog::on_addButton_clicked()
 {
     string lineText = ui->catLine->text().toStdString();
-    for (Category c : Category::cats) {
-        if (c.name == lineText)  {
+    for (Category & c : Category::cats) {
+        if (c.name == lineText)  { // check for dupe
             return; // optional: add an error message here
         }
     }
+
     Category::cats.push_back(Category(lineText));
-    // close window
+    done(0);
+
+// add a textEdit box to print categories for testing
+//    QString test;
+//    for (Category & c : Category::cats) {
+//        QString catname = QString::fromStdString(c.name);
+//        test.append(catname);
+//    }
+//    test.append(QString::number(Category::cats.size()));
+//    ui->textEdit->setText(test);
 }
 
 
 void CatDialog::on_cancelButton_clicked()
 {
-    // close window
+    done(0);
 }
 
