@@ -14,16 +14,17 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
-    home.cpp \
-    stats.cpp
+    piechartwidget.cpp
 
 HEADERS += \
+    piechartwidget.h \
     category.h \
     day.h \
     mainwindow.h \
     event.h \
     home.h \
     stats.h
+
 
 FORMS += \
     mainwindow.ui
