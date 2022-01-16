@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "day.h"
 #include "catdialog.h"
+#include "eventdialog.h"
 #include "home.h"
 #include "stats.h"
 
@@ -78,5 +79,13 @@ void MainWindow::on_addCatButton_clicked()
     CatDialog catDialog;
     catDialog.setModal(true);
     catDialog.exec();
+}
+
+
+void MainWindow::on_addEventButton_clicked()
+{
+    EventDialog eventDialog;
+    eventDialog.setModal(true);
+    eventDialog.exec();
 }
 
