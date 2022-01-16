@@ -5,8 +5,9 @@
 #include <map>
 #include "category.h"
 
-using std::string;
-using std::map;
+
+
+using namespace std;
 
 class Event
 {
@@ -19,6 +20,7 @@ public:
     int length;
 
     Event(Category category, string name, int start, int end);
+    string toString();
 
 };
 

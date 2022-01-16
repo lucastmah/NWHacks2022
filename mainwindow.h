@@ -21,7 +21,7 @@ public:
     ~MainWindow();
     vector<Day*> daysHolder;
     int findDay(int year, int month, int day){
-        for(int i = 0; i < daysHolder.size(); i++){
+        for(unsigned long long i = 0; i < daysHolder.size(); i++){
             Day d = *daysHolder.at(i);
             if(d.year == year && d.month == month && d.day == day){
                 return i;
