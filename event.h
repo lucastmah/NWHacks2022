@@ -1,26 +1,31 @@
 #ifndef EVENT_H
 #define EVENT_H
-#include <string>
+
 #include <iostream>
 #include <map>
+#include "category.h"
 
 using std::string;
 using std::map;
 
-class event
+class Event
 {
 public:
     string name;
-    int length; // in hours
+    Category category;
 
-    event(string name, int length);
+    int start;
+    int end;
+    int length;
 
-    ~event();
+    Event(Category category, string name, int start, int end);
+
+    ~Event();
 
 private:
     static map<string, int> activities; // allows for pruning of 0 each week
 };
 
-map<string, int> event::activities;
+map<string, int> Event::activities;
 
 #endif // EVENT_H
