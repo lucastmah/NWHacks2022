@@ -27,6 +27,7 @@ public:
     vector<Event*> events;
 
     Day(int year, int month, int day);
+    ~Day();
 
     void addEvent(Event* event);
     string toString();
