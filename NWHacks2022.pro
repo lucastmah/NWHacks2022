@@ -14,6 +14,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     event.cpp \
+    home.cpp \
+    stats.cpp \
     piechartwidget.cpp
 
 HEADERS += \
