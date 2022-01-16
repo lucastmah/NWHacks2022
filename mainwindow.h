@@ -21,7 +21,7 @@ public:
     ~MainWindow();
     vector<Day*> daysHolder;
     int findDay(int year, int month, int day){
-        for(unsigned long long i = 0; i < daysHolder.size(); i++){
+        for(unsigned long long i = 1; i < daysHolder.size() - 1; i++){
             Day d = *daysHolder.at(i);
             if(d.year == year && d.month == month && d.day == day){
                 return i;
@@ -32,7 +32,6 @@ public:
 
 private slots:
     void on_addCatButton_clicked();
-
     void on_addEventButton_clicked();
 
 private:

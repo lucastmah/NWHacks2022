@@ -29,7 +29,7 @@ public:
     Day(int year, int month, int day);
 
     void addEvent(Event* event);
-   string toString();
+    string toString();
 };
 
 #endif // DAY_H
