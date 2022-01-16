@@ -1,6 +1,7 @@
 #include "eventdialog.h"
 #include "ui_eventdialog.h"
 #include "event.h"
+#include "mainwindow.h"
 
 EventDialog::EventDialog(QWidget *parent) :
     QDialog(parent),
@@ -40,13 +41,24 @@ void EventDialog::on_addButton_clicked()
     int endMin = endTime.hour() * 60 + endTime.minute();
 
     Category cat = Category::findCat(ui->catBox->currentData().toString().toStdString());
+    
+    if (startDate.day() == endDate.day()) {
+        Event* e  = new Event(cat, lineText, startMin, endMin);
+        int i = MainWindow::findDay(startDate.year(), startDate.month(), startDate.day());
+        MainWindow::daysHolder[i]->addEvent(e);
 
-    if (start.date() < end.date()) { // split event across two days
+    } else { // split event across two days
 
-    } else {
+        Event* e1 = new Event(cat, lineText, startMin, 1440);
+        Event* e2 = new Event(cat, lineText, 0, endMin);
+
+        int i1 = MainWindow::findDay(startDate.year(), startDate.month(), startDate.day());
+        int i2 = MainWindow::findDay(endDate.year(), endDate.month(), endDate.day());
+
+        MainWindow::daysHolder[i1]->addEvent(e1);
+        MainWindow::daysHolder[i2]->addEvent(e2);
 
     }
-
     done(0);
 }
 
