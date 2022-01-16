@@ -10,15 +10,13 @@ using std::vector;
 class Category
 {
 public:
+    string name;
+
     static vector<Category> cats;
 
     Category();
-    Category(string cat_name);
+    Category(string name);
 
-    string name();
-
-private:
-    string cat_name;
 };
 
 #endif // CATEGORY_H

@@ -13,12 +13,13 @@ class Day
 {
 public:
     int weekday;
-    int free;
+    int free_time;
+
+    vector<Event> events;
 
     Day(int weekday);
 
-private:
-    vector<Event> events;
+    void addEvent(Event event);
 };
 
 #endif // DAY_H
