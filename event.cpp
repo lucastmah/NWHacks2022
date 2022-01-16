@@ -1,11 +1,9 @@
 #include "event.h"
 
-event::event(string name, int length) {
+Event::Event(Category category, string name, int start, int end) {
+    this->category = category;
     this->name = name;
-    this->length = length;
-    activities[name]++;
-}
-
-event::~event() {
-    activities[name]--;
+    this->start = start;
+    this->end = end;
+    this->length = end - start;
 }
