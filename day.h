@@ -13,7 +13,7 @@ class Day
 {
 public:
     int weekday;
-    int free;
+    int free_time;
 
     vector<Event> events;
 
