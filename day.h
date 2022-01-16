@@ -21,11 +21,11 @@ public:
     int year, month, day, weekday;
     int free_time;
 
-    vector<Event> events;
+    vector<Event*> events;
 
     Day(int year, int month, int day);
 
-    void addEvent(Event event);
+    void addEvent(Event* event);
 };
 
 #endif // DAY_H

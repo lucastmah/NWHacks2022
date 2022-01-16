@@ -26,8 +26,8 @@ public:
             if(d.year == year && d.month == month && d.day == day){
                 return i;
             }
-            return -1;
         }
+        return -1;
     }
 
 private slots:
