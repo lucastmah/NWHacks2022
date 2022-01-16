@@ -24,8 +24,7 @@ public:
 
     static int findDay(int year, int month, int day){
         for(unsigned long long i = 0; i < daysHolder.size(); i++){
-            Day d = *daysHolder.at(i);
-            if(d.year == year && d.month == month && d.day == day) return i;
+            if(daysHolder.at(i)->year == year && daysHolder.at(i)->month == month && daysHolder.at(i)->day == day) return i;
         }
         return -1;
     }
