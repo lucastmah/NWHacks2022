@@ -18,11 +18,13 @@
     );
  */
 
+vector<Day*> MainWindow::daysHolder;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);  
 
     //Connect to SQLite DB
     QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
@@ -68,11 +70,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Grouped Implementation
     ui->piechartgrouped->setData(daysHolder.at(0));
     for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++){
-        cout << daysHolder.at(0)->events.at(i)->toString() << endl << endl;
+        cout << daysHolder.at(0)->events.at(i)->toString() << endl;
     }
-
-
-
 }
 
 MainWindow::~MainWindow()
