@@ -15,3 +15,9 @@ void Day::addEvent(Event* event) {
     free_time -= event->length;
 }
 
+string Day::toString(){
+    string s = "Year: " + to_string(year) + "\n";
+    s += "Month: " + to_string(month) + "\n";
+    s += "Day: " + to_string(day) + "\n";
+    return s;
+}

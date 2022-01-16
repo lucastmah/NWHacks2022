@@ -3,6 +3,9 @@
 
 #include <vector>
 #include "event.h"
+#include <iostream>
+
+using namespace std;
 
 using std::string;
 using std::vector;
@@ -25,6 +28,7 @@ public:
     Day(int year, int month, int day);
 
     void addEvent(Event* event);
+   string toString();
 };
 
 #endif // DAY_H
