@@ -9,6 +9,20 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //Connect to SQLite DB
+    QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
+    sqldb.setDatabaseName("/Users/jonathanYSA/Qt_Projects/Test_project_2/test_db.db");
+    //TODO: Relative path should be used here
+
+    //Display whether connected to the database
+    if(!sqldb.open()){
+        QMessageBox::information(this,"Not Connected", "Database not connected");
+    }else{
+        QMessageBox::information(this,"Connected", "Database connected");
+    //TODO: should Exit here
+    }
+      
     QVector<QColor> colors(5);
     QVector<double> values(5);
     colors[0] = Qt::red, colors[1] = Qt::blue, colors[2] = Qt::green, colors[3] = Qt::yellow, colors[4] = Qt::magenta;
