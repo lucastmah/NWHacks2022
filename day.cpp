@@ -21,3 +21,4 @@ string Day::toString(){
     s += "Day: " + to_string(day) + "\n";
     return s;
 }
+

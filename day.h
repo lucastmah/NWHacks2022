@@ -4,9 +4,9 @@
 #include <vector>
 #include "event.h"
 #include <iostream>
+#include <string>
 
-using namespace std;
-
+using std::to_string;
 using std::string;
 using std::vector;
 
@@ -28,7 +28,7 @@ public:
     Day(int year, int month, int day);
 
     void addEvent(Event* event);
-   string toString();
+    string toString();
 };
 
 #endif // DAY_H

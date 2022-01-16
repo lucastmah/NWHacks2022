@@ -3,11 +3,10 @@
 
 #include <iostream>
 #include <map>
+#include <string>
 #include "category.h"
 
-
-
-using namespace std;
+using std::to_string;
 
 class Event
 {

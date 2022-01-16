@@ -15,3 +15,4 @@ string Event::toString(){
     s += "End: " + to_string(end) + "\n";
     return s;
 }
+
