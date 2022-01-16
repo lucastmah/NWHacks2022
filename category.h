@@ -17,6 +17,7 @@ public:
     Category();
     Category(string name);
 
+    static Category findCat(string name);
 };
 
 #endif // CATEGORY_H
