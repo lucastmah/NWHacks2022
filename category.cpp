@@ -4,7 +4,4 @@ vector<Category> Category::cats;
 
 Category::Category() {};
 
-Category::Category(string name) : name(name)
-{
-    cats.push_back(*this);
-}
+Category::Category(string name) : name(name) {};
