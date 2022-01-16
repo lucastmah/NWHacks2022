@@ -49,7 +49,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Category name here</string>
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Category Name Here</string>
    </property>
   </widget>
  </widget>
