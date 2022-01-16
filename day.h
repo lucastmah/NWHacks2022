@@ -15,10 +15,11 @@ public:
     int weekday;
     int free;
 
+    vector<Event> events;
+
     Day(int weekday);
 
-private:
-    vector<Event> events;
+    void addEvent(Event event);
 };
 
 #endif // DAY_H

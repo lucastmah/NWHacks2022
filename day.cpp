@@ -5,4 +5,6 @@ Day::Day(int weekday) : weekday(weekday)
     this->free = 1440;
 }
 
-// TODO: addEvent()
+void Day::addEvent(Event event) {
+    events.push_back(event);
+}
