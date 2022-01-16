@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    piechartwidget.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    piechartwidget.h
 
 FORMS += \
     mainwindow.ui
