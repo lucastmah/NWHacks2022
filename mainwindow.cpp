@@ -31,12 +31,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Windows testing: Copy the absolute path to the database. Use double slashes ("\\"), remember to add the file name.
     //sqldb.setDatabaseName("../NWHacks2022\\time_management.db");
-    sqldb.setDatabaseName("C:\\Users\\pm\\OneDrive\\Documents\\GitHub\\NWHacks2022\\time_management.db");
+    sqldb.setDatabaseName("C:\\Users\\josh_\\Documents\\GitHub\\NWHacks2022\\time_management.db");
 
     // Mac testing: Copy the absolute path to the database.
 
 //    sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
-    sqldb.setDatabaseName("/Users/ryan/Projects/NWHacks2022/time_management.db");
+//    sqldb.setDatabaseName("/Users/ryan/Projects/NWHacks2022/time_management.db");
 
     //TODO: Relative path should be used here
 
@@ -68,14 +68,12 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
 
-    //fix piechart testing
-    /*
-    Day* temp(0);
-    temp->weekday = 0;
-    vector<Event> events(5);
-    */
+    Category::cats.push_back(Category("Sleeping"));
+    Category::cats.push_back(Category("Working"));
+    Category::cats.push_back(Category("Eating"));
+    Category::cats.push_back(Category("School"));
+    Category::cats.push_back(Category("Recreation"));
 
-    // Grouped Implementation
     if(!daysHolder.empty()){
         if(!daysHolder.at(0)->events.empty()) {
             ui->piechartgrouped->setData(daysHolder.at(0));
