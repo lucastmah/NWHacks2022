@@ -12,30 +12,33 @@ void PieChartWidget::setData(Day* target)
 {
     // Grouped Implementation
     // Array Legend: [0] Sleep, [1] Work, [2] Eating, [3] School, [4] Recreation
-    QVector<double> tempTotals(target->events.size(), 0);
+    int categories = 5;
+    QVector<int> tempTotals(categories, 0);
 
     // Tallies minutes for each category, updates values values
     for (unsigned long long i=0; i < target->events.size(); i++)
     {
-        if(target->events[i]->category.name == "Sleeping") {
-            tempTotals[0] += target->events[i]->length;
+        int currValue = target->events.at(i)->length;
+        if(target->events.at(i)->category.name == "Sleeping") {
+            tempTotals[0] += currValue;
         }
-        else if(target->events[i]->category.name == "Working") {
-            tempTotals[1] +=target->events[i]->length;
+        else if(target->events.at(i)->category.name == "Working") {
+            tempTotals[1] += currValue;
+
         }
-        else if(target->events[i]->category.name == "Eating") {
-           tempTotals[2] += target->events[i]->length;
+        else if(target->events.at(i)->category.name == "Eating") {
+            tempTotals[2] += currValue;
         }
-        else if(target->events[i]->category.name == "School") {
-            tempTotals[3] += target->events[i]->length;
+        else if(target->events.at(i)->category.name == "School") {
+            tempTotals[3] += currValue;
         }
-        else if(target->events[i]->category.name == "Recreation"){
-            tempTotals[4] += target->events[i]->length;
+        else {
+            tempTotals[4] += currValue;
+
         }
     }
     totals = tempTotals;
-    QVector<QColor> tempColors = {Qt::red, Qt::blue, Qt::yellow, Qt::cyan, Qt::magenta};
-    qvColors = tempColors;
+    qvColors = {Qt::red, Qt::blue, Qt::yellow, Qt::cyan, Qt::magenta};
     repaint();
     update();
 }

@@ -30,9 +30,11 @@ MainWindow::MainWindow(QWidget *parent)
     QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
 
     // Windows testing: Copy the absolute path to the database. Use double slashes ("\\"), remember to add the file name.
-    //sqldb.setDatabaseName("C:\\Users\\pm\\OneDrive\\Documents\\GitHub\\NWHacks2022\\time_management.db");
+    //sqldb.setDatabaseName("../NWHacks2022\\time_management.db");
+    sqldb.setDatabaseName("C:\\Users\\pm\\OneDrive\\Documents\\GitHub\\NWHacks2022\\time_management.db");
 
     // Mac testing: Copy the absolute path to the database.
+
     sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
     //sqldb.setDatabaseName("../GitHub/NWHacks2022/time_management.db");
     //TODO: Relative path should be used here
@@ -77,10 +79,10 @@ MainWindow::MainWindow(QWidget *parent)
     if(!daysHolder.empty()){
         updateGroupedPiechart();
         for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++) {
-            cout << daysHolder.at(0)->events.at(i)->toString() << endl;
+            std::cout << daysHolder.at(0)->events.at(i)->toString() << std::endl;
         }
     }else{
-        cout << "DaysHolder is empty! QUIT." << endl;
+        std::cout << "DaysHolder is empty! QUIT." << std::endl;
         exit(2);
     }
 
