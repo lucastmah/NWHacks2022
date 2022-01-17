@@ -73,8 +73,9 @@ MainWindow::MainWindow(QWidget *parent)
     */
 
     // Grouped Implementation
+
     if(!daysHolder.empty()){
-        ui->piechartgrouped->setData(daysHolder.at(0));
+        updateGroupedPiechart();
         for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++) {
             cout << daysHolder.at(0)->events.at(i)->toString() << endl;
         }
@@ -82,6 +83,7 @@ MainWindow::MainWindow(QWidget *parent)
         cout << "DaysHolder is empty! QUIT." << endl;
         exit(2);
     }
+
 
 }
 
@@ -106,3 +108,6 @@ void MainWindow::on_addEventButton_clicked()
     eventDialog.exec();
 }
 
+void MainWindow::updateGroupedPiechart(){
+    ui->piechartgrouped->setData(daysHolder.at(0));
+}

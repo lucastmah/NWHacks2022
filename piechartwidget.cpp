@@ -20,7 +20,7 @@ void PieChartWidget::setData(Day* target)
         if(target->events[i]->category.name == "Sleeping") {
             tempTotals[0] += target->events[i]->length;
         }
-        else if(target->events[i]->category.name == "Work") {
+        else if(target->events[i]->category.name == "Working") {
             tempTotals[1] +=target->events[i]->length;
         }
         else if(target->events[i]->category.name == "Eating") {
@@ -29,7 +29,7 @@ void PieChartWidget::setData(Day* target)
         else if(target->events[i]->category.name == "School") {
             tempTotals[3] += target->events[i]->length;
         }
-        else {
+        else if(target->events[i]->category.name == "Recreation"){
             tempTotals[4] += target->events[i]->length;
         }
     }
