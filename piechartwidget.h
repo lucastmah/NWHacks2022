@@ -13,7 +13,7 @@ public:
 protected:
     void paintEvent(QPaintEvent*);
 private:
-    QVector<double> totals;
+    QVector<int> totals;
     QVector<QColor> qvColors;
 signals:
 
