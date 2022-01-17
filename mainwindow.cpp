@@ -27,12 +27,25 @@ MainWindow::MainWindow(QWidget *parent)
     QSqlDatabase sqldb = QSqlDatabase::addDatabase("QSQLITE");
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
 =======
 =======
 >>>>>>> Stashed changes
     sqldb.setDatabaseName("C:\\Users\\josh_\\Documents\\GitHub\\NWHacks2022\\time_management.db");
     //qldb.setDatabaseName("time_management.db");
+>>>>>>> Stashed changes
+=======
+
+    // Windows testing: Copy the absolute path to the database. Use double slashes ("\\"), remember to add the file name.
+    //sqldb.setDatabaseName("../NWHacks2022\\time_management.db");
+    sqldb.setDatabaseName("C:\\Users\\josh_\\Documents\\GitHub\\NWHacks2022\\time_management.db");
+
+    // Mac testing: Copy the absolute path to the database.
+
+   // sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+   // sqldb.setDatabaseName("/Users/ryan/Projects/NWHacks2022/time_management.db");
+
 >>>>>>> Stashed changes
     //TODO: Relative path should be used here
 
@@ -84,9 +97,17 @@ MainWindow::MainWindow(QWidget *parent)
     //TODO: should Exit here
     }
 
+<<<<<<< Updated upstream
     Day* temp(0);
     temp->weekday = 0;
     vector<Event> events(5);
+=======
+    Category::cats.push_back(Category("Sleeping"));
+    Category::cats.push_back(Category("Work"));
+    Category::cats.push_back(Category("Eating"));
+    Category::cats.push_back(Category("School"));
+    Category::cats.push_back(Category("Recreation"));
+>>>>>>> Stashed changes
 
     // Grouped Implementation
     ui->piechartgrouped->setData(temp);

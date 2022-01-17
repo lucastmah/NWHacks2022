@@ -18,7 +18,6 @@ class Day
 {
 public:
     int year, month, day, weekday;
-    int free_time;
 
     vector<Event*> events;
 
