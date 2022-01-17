@@ -34,7 +34,10 @@ MainWindow::MainWindow(QWidget *parent)
     sqldb.setDatabaseName("C:\\Users\\pm\\OneDrive\\Documents\\GitHub\\NWHacks2022\\time_management.db");
 
     // Mac testing: Copy the absolute path to the database.
-    //sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+
+//    sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+    sqldb.setDatabaseName("/Users/ryan/Projects/NWHacks2022/time_management.db");
+
     //TODO: Relative path should be used here
 
     //Display whether connected to the database
@@ -109,5 +112,51 @@ void MainWindow::on_addEventButton_clicked()
     EventDialog eventDialog;
     eventDialog.setModal(true);
     eventDialog.exec();
+}
+
+bool MainWindow::cmp(std::pair<string, int>& a, std::pair<string, int>& b) {
+    return a.second < b.second;
+}
+
+void MainWindow::on_tabWidget_tabBarClicked(int index)
+{
+    QString avgText = "Average time spent: \n";
+    QString topText = "Top activities: \n";
+
+
+    int n = std::min(7, (int) daysHolder.size());
+    if (n == 0) {
+        ui->avgPanel->setText(avgText);
+        ui->topPanel->setText(topText);
+        return;
+    }
+
+    std::map<string, int> m;
+
+    for (int i = 0; i < n; i++) {
+        for (Event* e : daysHolder[i]->events) {
+            m[e->category.name] += e->length; // total up minutes for each category
+        }
+    }
+
+    for (auto const & c : m) {
+        avgText += QString::fromStdString(c.first).toUpper();
+        avgText += QString(": ");
+        avgText += QString::number(c.second / n);
+        avgText += QString("minutes\n");
+    }
+
+    std::sort(m.begin(), m.end(), MainWindow::cmp);
+
+    for (auto const & c : m) {
+        topText += QString::fromStdString(c.first).toUpper();
+        topText += QString(": ");
+        topText += QString::number(c.second / (n * 1440) * 100);
+        topText += QString("%\n");
+    }
+
+    ui->avgPanel->setText(avgText);
+    ui->topPanel->setText(topText);
+
 }
 
