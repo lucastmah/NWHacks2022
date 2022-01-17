@@ -37,5 +37,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    static bool cmp(std::pair<string, int>& a, std::pair<string, int>& b);
 };
 #endif // MAINWINDOW_H

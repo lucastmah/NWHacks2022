@@ -146,12 +146,12 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
         avgText += QString("minutes\n");
     }
 
-    std::sort(m.begin(), m.end(), MainWindow::cmp);
+//    std::sort(m.begin(), m.end(), MainWindow::cmp);
 
     for (auto const & c : m) {
         topText += QString::fromStdString(c.first).toUpper();
         topText += QString(": ");
-        topText += QString::number(c.second / (n * 1440) * 100);
+        topText += QString::number((int) ((double) c.second / (n * 1440) * 100));
         topText += QString("%\n");
     }
 
