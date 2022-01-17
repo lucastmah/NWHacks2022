@@ -34,7 +34,9 @@ MainWindow::MainWindow(QWidget *parent)
     sqldb.setDatabaseName("C:\\Users\\pm\\OneDrive\\Documents\\GitHub\\NWHacks2022\\time_management.db");
 
     // Mac testing: Copy the absolute path to the database.
-    //sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+
+    sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+    //sqldb.setDatabaseName("../GitHub/NWHacks2022/time_management.db");
     //TODO: Relative path should be used here
 
     //Display whether connected to the database
@@ -73,20 +75,17 @@ MainWindow::MainWindow(QWidget *parent)
     */
 
     // Grouped Implementation
+
     if(!daysHolder.empty()){
-        if(!daysHolder.at(0)->events.empty()) {
-            ui->piechartgrouped->setData(daysHolder.at(0));
-            for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++) {
-                std::cout << daysHolder.at(0)->events.at(i)->toString() << std::endl;
-            }
-        }
-        else {
-            std::cout << "DaysHolder is broken! QUIT." << std::endl;
+        updateGroupedPiechart();
+        for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++) {
+            std::cout << daysHolder.at(0)->events.at(i)->toString() << std::endl;
         }
     }else{
         std::cout << "DaysHolder is empty! QUIT." << std::endl;
         exit(2);
     }
+
 
 }
 
@@ -111,3 +110,6 @@ void MainWindow::on_addEventButton_clicked()
     eventDialog.exec();
 }
 
+void MainWindow::updateGroupedPiechart(){
+    ui->piechartgrouped->setData(daysHolder.at(0));
+}
