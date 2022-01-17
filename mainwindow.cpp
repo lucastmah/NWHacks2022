@@ -114,20 +114,16 @@ void MainWindow::on_addEventButton_clicked()
     eventDialog.exec();
 }
 
-bool MainWindow::cmp(std::pair<string, int>& a, std::pair<string, int>& b) {
-    return a.second < b.second;
-}
-
 void MainWindow::on_tabWidget_tabBarClicked(int index)
 {
     QString avgText = "Average time spent: \n";
-    QString topText = "Top activities: \n";
+    QString perText = "Percent time spent: \n";
 
 
     int n = std::min(7, (int) daysHolder.size());
     if (n == 0) {
         ui->avgPanel->setText(avgText);
-        ui->topPanel->setText(topText);
+        ui->perPanel->setText(perText);
         return;
     }
 
@@ -146,17 +142,15 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
         avgText += QString("minutes\n");
     }
 
-//    std::sort(m.begin(), m.end(), MainWindow::cmp);
-
     for (auto const & c : m) {
-        topText += QString::fromStdString(c.first).toUpper();
-        topText += QString(": ");
-        topText += QString::number((int) ((double) c.second / (n * 1440) * 100));
-        topText += QString("%\n");
+        perText += QString::fromStdString(c.first).toUpper();
+        perText += QString(": ");
+        perText += QString::number((int) ((double) c.second / (n * 1440) * 100));
+        perText += QString("%\n");
     }
 
     ui->avgPanel->setText(avgText);
-    ui->topPanel->setText(topText);
+    ui->perPanel->setText(perText);
 
 }
 
