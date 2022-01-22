@@ -14,6 +14,9 @@ CatDialog::~CatDialog()
     delete ui;
 }
 
+/**
+ * @brief CatDialog::on_addButton_clicked
+ */
 void CatDialog::on_addButton_clicked()
 {
     string lineText = ui->catLine->text().toStdString();
@@ -36,7 +39,9 @@ void CatDialog::on_addButton_clicked()
 //    ui->textEdit->setText(test);
 }
 
-
+/**
+ * @brief CatDialog::on_cancelButton_clicked
+ */
 void CatDialog::on_cancelButton_clicked()
 {
     done(0);

@@ -7,6 +7,7 @@
 #include "stats.h"
 
 /*
+ * Data types in the database
  * event_list(
     year INT,
     month INT,
@@ -45,10 +46,10 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::information(this,"Not Connected", "Database not connected");
     }else{
         QMessageBox::information(this,"Connected", "Database connected");
-    //TODO: should Exit here
+    //TODO: should Exit here?
     }
 
-    //Read data in the database and push into events
+    //Read data in the database, push into events of each Day
     QSqlQueryModel* readModel = new QSqlQueryModel;
     readModel->setQuery("SELECT * FROM event_list");
     for(int i = 0; i < readModel->rowCount();i++){
@@ -88,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }else{
         std::cout << "DaysHolder is empty! QUIT." << std::endl;
-        exit(2);
+        //exit(2); // If not testing with the database, comment out this line.
     }
 
 }
@@ -98,7 +99,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+/**
+ * @brief MainWindow::on_addCatButton_clicked
+ */
 void MainWindow::on_addCatButton_clicked()
 {
     CatDialog catDialog;
@@ -106,7 +109,9 @@ void MainWindow::on_addCatButton_clicked()
     catDialog.exec();
 }
 
-
+/**
+ * @brief MainWindow::on_addEventButton_clicked
+ */
 void MainWindow::on_addEventButton_clicked()
 {
     EventDialog eventDialog;
@@ -114,6 +119,10 @@ void MainWindow::on_addEventButton_clicked()
     eventDialog.exec();
 }
 
+/**
+ * @brief MainWindow::on_tabWidget_tabBarClicked
+ * @param index
+ */
 void MainWindow::on_tabWidget_tabBarClicked(int index)
 {
     QString avgText = "Average time spent: \n";

@@ -8,6 +8,10 @@ PieChartWidget::PieChartWidget(QWidget *parent)
 
 }
 
+/**
+ * @brief PieChartWidget::setData
+ * @param target
+ */
 void PieChartWidget::setData(Day* target)
 {
     // Grouped Implementation
@@ -41,6 +45,9 @@ void PieChartWidget::setData(Day* target)
     update();
 }
 
+/**
+ * @brief PieChartWidget::paintEvent
+ */
 void PieChartWidget::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);

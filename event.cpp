@@ -8,6 +8,10 @@ Event::Event(Category category, string name, int start, int end) {
     this->length = end - start;
 }
 
+/**
+ * @brief Event::toString
+ * @return Information about this Event object in a fixed format
+ */
 string Event::toString(){
     string s = "Category: " + category.name + "\n";
     s += "Name: " + name + "\n";

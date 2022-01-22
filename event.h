@@ -7,6 +7,9 @@
 
 using std::to_string;
 
+/**
+ * @brief The Event class
+ */
 class Event
 {
 public:

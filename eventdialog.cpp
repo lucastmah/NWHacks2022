@@ -19,6 +19,9 @@ EventDialog::~EventDialog()
     delete ui;
 }
 
+/**
+ * @brief EventDialog::on_addButton_clicked
+ */
 void EventDialog::on_addButton_clicked()
 {
     if (ui->catBox->currentIndex() == -1) return;
@@ -62,7 +65,9 @@ void EventDialog::on_addButton_clicked()
     done(0);
 }
 
-
+/**
+ * @brief EventDialog::on_cancelButton_clicked
+ */
 void EventDialog::on_cancelButton_clicked()
 {
     done(0);

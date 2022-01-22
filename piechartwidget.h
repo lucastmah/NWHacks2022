@@ -4,6 +4,9 @@
 #include <QWidget>
 #include "day.h"
 
+/**
+ * @brief The PieChartWidget class
+ */
 class PieChartWidget : public QWidget
 {
     Q_OBJECT
