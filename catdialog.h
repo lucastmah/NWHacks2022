@@ -7,6 +7,9 @@ namespace Ui {
 class CatDialog;
 }
 
+/**
+ * @brief The CatDialog class
+ */
 class CatDialog : public QDialog
 {
     Q_OBJECT

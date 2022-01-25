@@ -7,6 +7,9 @@
 using std::string;
 using std::vector;
 
+/**
+ * @brief The Category class
+ */
 class Category
 {
 public:

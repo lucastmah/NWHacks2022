@@ -12,18 +12,14 @@ using std::to_string;
 using std::cout;
 using std::endl;
 
-enum week { SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY };
-
 /**
  * @brief The Day class
  * @variable year, month and day represent the date of this day
- * @variable free_time holds how much free time is left (in minutes)
  */
 class Day
 {
 public:
-    int year, month, day, weekday;
-    int free_time;
+    int year, month, day;
 
     vector<Event*> events;
 

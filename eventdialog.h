@@ -13,6 +13,9 @@ namespace Ui {
 class EventDialog;
 }
 
+/**
+ * @brief The EventDialog class
+ */
 class EventDialog : public QDialog
 {
     Q_OBJECT

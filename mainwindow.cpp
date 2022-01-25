@@ -7,6 +7,7 @@
 #include "stats.h"
 
 /*
+ * Data types in the database
  * event_list(
     year INT,
     month INT,
@@ -35,8 +36,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Mac testing: Copy the absolute path to the database.
 
-    sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
-    //sqldb.setDatabaseName("../GitHub/NWHacks2022/time_management.db");
+//    sqldb.setDatabaseName("/Users/jonathanYSA/Documents/GitHub/NWHacks2022/time_management.db");
+    sqldb.setDatabaseName("/Users/ryan/Projects/NWHacks2022/time_management.db");
+
     //TODO: Relative path should be used here
 
     //Display whether connected to the database
@@ -44,10 +46,10 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::information(this,"Not Connected", "Database not connected");
     }else{
         QMessageBox::information(this,"Connected", "Database connected");
-    //TODO: should Exit here
+    //TODO: should Exit here?
     }
 
-    //Read data in the database and push into events
+    //Read data in the database, push into events of each Day
     QSqlQueryModel* readModel = new QSqlQueryModel;
     readModel->setQuery("SELECT * FROM event_list");
     for(int i = 0; i < readModel->rowCount();i++){
@@ -83,7 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }else{
         std::cout << "DaysHolder is empty! QUIT." << std::endl;
-        exit(2);
+        //exit(2); // If not testing with the database, comment out this line.
     }
 
 
@@ -94,7 +96,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+/**
+ * @brief MainWindow::on_addCatButton_clicked
+ */
 void MainWindow::on_addCatButton_clicked()
 {
     CatDialog catDialog;
@@ -102,7 +106,9 @@ void MainWindow::on_addCatButton_clicked()
     catDialog.exec();
 }
 
-
+/**
+ * @brief MainWindow::on_addEventButton_clicked
+ */
 void MainWindow::on_addEventButton_clicked()
 {
     EventDialog eventDialog;
@@ -110,6 +116,52 @@ void MainWindow::on_addEventButton_clicked()
     eventDialog.exec();
 }
 
+
 void MainWindow::updateGroupedPiechart(){
     ui->piechartgrouped->setData(daysHolder.at(0));
 }
+
+/**
+ * @brief MainWindow::on_tabWidget_tabBarClicked
+ * @param index
+ */
+void MainWindow::on_tabWidget_tabBarClicked(int index)
+{
+    QString avgText = "Average time spent: \n";
+    QString perText = "Percent time spent: \n";
+
+
+    int n = std::min(7, (int) daysHolder.size());
+    if (n == 0) {
+        ui->avgPanel->setText(avgText);
+        ui->perPanel->setText(perText);
+        return;
+    }
+
+    std::map<string, int> m;
+
+    for (int i = 0; i < n; i++) {
+        for (Event* e : daysHolder[i]->events) {
+            m[e->category.name] += e->length; // total up minutes for each category
+        }
+    }
+
+    for (auto const & c : m) {
+        avgText += QString::fromStdString(c.first).toUpper();
+        avgText += QString(": ");
+        avgText += QString::number(c.second / n);
+        avgText += QString("minutes\n");
+    }
+
+    for (auto const & c : m) {
+        perText += QString::fromStdString(c.first).toUpper();
+        perText += QString(": ");
+        perText += QString::number((int) ((double) c.second / (n * 1440) * 100));
+        perText += QString("%\n");
+    }
+
+    ui->avgPanel->setText(avgText);
+    ui->perPanel->setText(perText);
+
+}
+
