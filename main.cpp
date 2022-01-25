@@ -1,7 +1,7 @@
 /**
  * Descriptions:
- * @authors Lucas Mah, Josh , Ryan , Shenao "Jonathan" Yang
- * @date Jan.15 - 16, 2022.
+ * @authors Lucas Mah, Josh Castillo, Ryan Tan, Shenao "Jonathan" Yang
+ * @date Jan. 15, 2022.
  * nwHacks 2022
  */
 
