@@ -26,8 +26,9 @@ void PieChartWidget::setData(Day* target)
         if(target->events.at(i)->category.name == "Sleeping") {
             tempTotals[0] += currValue;
         }
-        else if(target->events.at(i)->category.name == "Work") {
+        else if(target->events.at(i)->category.name == "Working") {
             tempTotals[1] += currValue;
+
         }
         else if(target->events.at(i)->category.name == "Eating") {
             tempTotals[2] += currValue;
@@ -37,6 +38,7 @@ void PieChartWidget::setData(Day* target)
         }
         else {
             tempTotals[4] += currValue;
+
         }
     }
     totals = tempTotals;

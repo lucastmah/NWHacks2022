@@ -77,20 +77,17 @@ MainWindow::MainWindow(QWidget *parent)
     */
 
     // Grouped Implementation
+
     if(!daysHolder.empty()){
-        if(!daysHolder.at(0)->events.empty()) {
-            ui->piechartgrouped->setData(daysHolder.at(0));
-            for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++) {
-                std::cout << daysHolder.at(0)->events.at(i)->toString() << std::endl;
-            }
-        }
-        else {
-            std::cout << "DaysHolder is broken! QUIT." << std::endl;
+        updateGroupedPiechart();
+        for(unsigned long long i = 0; i < daysHolder.at(0)->events.size(); i++) {
+            std::cout << daysHolder.at(0)->events.at(i)->toString() << std::endl;
         }
     }else{
         std::cout << "DaysHolder is empty! QUIT." << std::endl;
         //exit(2); // If not testing with the database, comment out this line.
     }
+
 
 }
 
@@ -117,6 +114,11 @@ void MainWindow::on_addEventButton_clicked()
     EventDialog eventDialog;
     eventDialog.setModal(true);
     eventDialog.exec();
+}
+
+
+void MainWindow::updateGroupedPiechart(){
+    ui->piechartgrouped->setData(daysHolder.at(0));
 }
 
 /**
