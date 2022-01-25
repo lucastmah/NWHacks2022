@@ -116,7 +116,9 @@ void MainWindow::on_addEventButton_clicked()
     eventDialog.exec();
 }
 
-
+/**
+ * @brief MainWindow::updateGroupedPiechart set first day's data to the grouped piechart
+ */
 void MainWindow::updateGroupedPiechart(){
     ui->piechartgrouped->setData(daysHolder.at(0));
 }
