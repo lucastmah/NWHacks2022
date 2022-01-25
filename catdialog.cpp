@@ -15,7 +15,7 @@ CatDialog::~CatDialog()
 }
 
 /**
- * @brief CatDialog::on_addButton_clicked
+ * @brief CatDialog::on_addButton_clicked creates and adds a category to the vector of categories if new
  */
 void CatDialog::on_addButton_clicked()
 {
@@ -25,22 +25,12 @@ void CatDialog::on_addButton_clicked()
             return; // optional: add an error message here
         }
     }
-
     Category::cats.push_back(Category(lineText));
     done(0);
-
-// add a textEdit box to print categories for testing
-//    QString test;
-//    for (Category & c : Category::cats) {
-//        QString catname = QString::fromStdString(c.name);
-//        test.append(catname);
-//    }
-//    test.append(QString::number(Category::cats.size()));
-//    ui->textEdit->setText(test);
 }
 
 /**
- * @brief CatDialog::on_cancelButton_clicked
+ * @brief CatDialog::on_cancelButton_clicked closes the dialog
  */
 void CatDialog::on_cancelButton_clicked()
 {

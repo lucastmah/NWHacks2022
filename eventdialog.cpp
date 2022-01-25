@@ -21,13 +21,13 @@ EventDialog::~EventDialog()
  */
 void EventDialog::on_addButton_clicked()
 {
-    if (ui->catBox->currentIndex() == -1) return;
+    if (ui->catBox->currentIndex() == -1) return; // no category selected yet
 
-    string lineText = ui->nameLine->text().toStdString();
+    string lineText = ui->nameLine->text().toStdString(); // initialize current input
 
+    // date formats
     QDateTime start = ui->start->dateTime();
     QDateTime end = ui->end->dateTime();
-
     QDate startDate = start.date();
     QDate endDate = end.date();
 
@@ -82,7 +82,7 @@ void EventDialog::on_addButton_clicked()
 }
 
 /**
- * @brief EventDialog::on_cancelButton_clicked
+ * @brief EventDialog::on_cancelButton_clicked closes the dialog window
  */
 void EventDialog::on_cancelButton_clicked()
 {

@@ -14,7 +14,7 @@ Day::~Day() {
 }
 
 /**
- * @brief Day::addEvent
+ * @brief Day::addEvent adds a new event to the events member of day
  * @param event
  */
 void Day::addEvent(Event* event) {
